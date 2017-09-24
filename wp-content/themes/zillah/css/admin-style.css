@@ -1,0 +1,106 @@
+.customize-control-title {
+	margin-top: 15px;
+	color: #689181;
+}
+
+
+/***********************************/
+/***** Palette picker control ******/
+/***********************************/
+
+.zillah_palette_picker li span {
+	width: 43px;
+	height: 40px;
+	display: inline-block;
+}
+
+.zillah_palette_input {
+	border: 1px solid #cfcfcf;
+	width: 209px;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+	font-size: 16px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #FFFFFF;
+}
+
+.zillah_palette_input span {
+	display: block;
+	height: 40px;
+	float: left;
+	width: 40px;
+}
+
+.zillah_dropdown {
+	width: 20px;
+	height: 50px;
+	font-size: 20px;
+	float: left;
+	border: 1px solid #cfcfcf;
+	text-align: center;
+	border-left: 0px;
+	cursor: pointer;
+	line-height: 50px;
+	background-color: #00a5f9;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.zillah_dropdown span {
+	line-height: 50px;
+}
+
+.zillah_palette_picker {
+	clear: both;
+	text-align: center;
+	padding-top: 6px;
+	border: 1px solid #cfcfcf;
+	border-top: 0px;
+	display: none;
+	width: 240px;
+	background-color: #fff;
+}
+
+.zillah_palette_picker li span {
+	cursor: pointer;
+}
+
+.zillah_pallete_default {
+	line-height: 40px;
+	cursor: pointer;
+}
+
+/***********************************/
+/****** Google fonts Control *******/
+/***********************************/
+.ti-google-fonts-wrap {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 10px;
+    border: 1px solid #ddd;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.ti-google-fonts-wrap label {
+	width: 100%;
+	display: block;
+	clear: left;
+	font-size: 16px;
+	line-height: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ti-google-fonts-wrap label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.ti-google-fonts-wrap label:hover,
+.ti-google-fonts-wrap label.ti-google-fonts-active {
+    color: #0073aa;
+}
+
