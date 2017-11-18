@@ -76,9 +76,7 @@ function cryout_breadcrumbs_hook() {
 
 // Master Footer hook
 function cryout_master_footer_hook() { ?>
-		<div id="footer-inside">
-			<?php do_action( 'cryout_master_footer_hook' ); ?>
-		</div> <!-- #footer-inside -->
+
 <?php
 }
 

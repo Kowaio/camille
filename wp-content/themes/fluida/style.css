@@ -1151,8 +1151,8 @@ img#wpstats {
 	-webkit-box-direction: normal;
 	        flex-direction: column;
 	position: relative;
-	padding: 2em;
-	/*align-items: center;*/
+	padding: 10px;
+	align-items: flex-end;
 }
 
 .footer-all .widget-container::after,
@@ -3517,7 +3517,7 @@ a.comment-edit-link:hover {}
 }
 
 .widget-container {
-	margin: 0 0 1.5em 0;
+
 }
 
 .widget-container > * {
