@@ -1,9 +1,9 @@
 
 function cryout_serious_slider_getsliders() {
 	output = [ {text: CRYOUT_MCE_LOCALIZED.text_retrieving_sliders, value: '0'} ]
-	
+
 	jQuery.ajax(
-			cryout_serious_slider_ajax.ajaxurl, 
+			cryout_serious_slider_ajax.ajaxurl,
 			{ 'method': 'POST', 'data' : { 'action': 'cryout_serious_slider_ajax' }, async: false, dataType: 'json',
 			'success': function( data ) {
 				output = data;
@@ -18,7 +18,7 @@ function cryout_serious_slider_getsliders() {
 	tinymce.PluginManager.add('serious_slider', function( editor, url ) {
 		var sh_tag = 'serious-slider';
 
-		//helper functions 
+		//helper functions
 		function getAttr(s, n) {
 			n = new RegExp(n + '=\"([^\"]+)\"', 'g').exec(s);
 			return n ?  window.decodeURIComponent(n[1]) : '';
@@ -52,7 +52,7 @@ function cryout_serious_slider_getsliders() {
 
 		//add popup
 		editor.addCommand('serious_slider_popup', function(ui, v) {
-			
+
 			//setup defaults
 			var sid = '0'; if (v.sid) sid = v.sid;
 
@@ -81,15 +81,15 @@ function cryout_serious_slider_getsliders() {
 						'values': cryout_serious_slider_getsliders(),
 						tooltip: ''
 					},
-					
+
 				],
 				onsubmit: function( e ) {
 					var shortcode_str = '[' + sh_tag;
-					
+
 					if ( typeof e.data.sid != 'undefined')
 							shortcode_str += ' id="' + e.data.sid + '"';
 					shortcode_str += ']';
-					
+
 					//insert shortcode to tinymce
 					editor.insertContent( shortcode_str);
 				}
@@ -108,7 +108,7 @@ function cryout_serious_slider_getsliders() {
 		});
 
 		/*//replace from shortcode to an image placeholder
-		editor.on('BeforeSetcontent', function(event){ 
+		editor.on('BeforeSetcontent', function(event){
 			event.content = replaceShortcodes( event.content );
 		});
 

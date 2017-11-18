@@ -95,7 +95,7 @@ if (typeof jQuery === 'undefined') {
 
   var Carousel = function (element, options) {
     this.$element    = $(element)
-    this.$indicators = this.$element.find('.seriousslider-indicators')
+    this.$indicators = this.$element.find('.seriousslider-indicators-inside')
     this.options     = options
     this.paused      = null
     this.sliding     = null
@@ -320,13 +320,13 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* swipe support for mobile devices */
-jQuery(document).ready(function() {  
-   jQuery(".cryout-serious-slider").swiperight(function() {  
-      jQuery(".cryout-serious-slider").carousel('prev');  
-    });  
-   jQuery(".cryout-serious-slider").swipeleft(function() {  
-      jQuery(".cryout-serious-slider").carousel('next');  
-   });  
-});  
+jQuery(document).ready(function() {
+   jQuery(".cryout-serious-slider").swiperight(function() {
+      jQuery(".cryout-serious-slider").carousel('prev');
+    });
+   jQuery(".cryout-serious-slider").swipeleft(function() {
+      jQuery(".cryout-serious-slider").carousel('next');
+   });
+});
 
 /* FIN */

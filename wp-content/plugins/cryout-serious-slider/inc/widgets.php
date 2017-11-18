@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
+
 class Cryout_Serious_Slider_Widget extends WP_Widget { 	
 
 	public $shortcode_tag = 'serious-slider';

@@ -2,6 +2,10 @@
 /* global console */
 
 jQuery(document).ready(function() {
+    initAll();
+});
+
+function initAll(){
     jQuery('.pirate-forms-nav-tabs a').click(function (event) {
         event.preventDefault();
         jQuery(this).parent().addClass('active');
@@ -22,6 +26,18 @@ jQuery(document).ready(function() {
         cwpSendTestEmail();
         return false;
     });
+
+    jQuery('input[name="pirateformsopt_recaptcha_field"]').on('click', function(){
+        if(jQuery(this).val() === 'yes'){
+            jQuery('.pirateformsopt_recaptcha').show();
+        }else{
+            jQuery('.pirateformsopt_recaptcha').hide();
+        }
+    });
+
+    if( jQuery('input[name="pirateformsopt_recaptcha_field"]:checked').val() !== 'yes' ){
+        jQuery('.pirateformsopt_recaptcha').hide();
+    }
 
     function cwpSendTestEmail() {
         jQuery('.pirate-forms-test-message').html('');
@@ -45,6 +61,10 @@ jQuery(document).ready(function() {
     }
 
     function cwpTopUpdateForm() {
+        if(jQuery('#pirateformsopt_recaptcha_fieldyes').is(':checked') && (jQuery('#pirateformsopt_recaptcha_sitekey').val() === '' || jQuery('#pirateformsopt_recaptcha_secretkey').val() === '')){
+            window.alert(cwp_top_ajaxload.i10n.recaptcha);
+            return;
+        }
 
         startAjaxIntro();
 
@@ -91,4 +111,16 @@ jQuery(document).ready(function() {
         }
     });
 
-});
+    // add visibility toggle to password type fields
+    jQuery('.pirate-forms-password-toggle').append('<span class="dashicons dashicons-visibility"></span>');
+    jQuery('.pirate-forms-password-toggle span').on('click', function(){
+        var span = jQuery(this);
+        if(span.hasClass('dashicons-visibility')){
+            span.parent().find('input[type="password"]').attr('type', 'text');
+            span.removeClass('dashicons-visibility').addClass('dashicons-hidden');
+        }else{
+            span.parent().find('input[type="text"]').attr('type', 'password');
+            span.removeClass('dashicons-hidden').addClass('dashicons-visibility');
+        }
+    });
+}
